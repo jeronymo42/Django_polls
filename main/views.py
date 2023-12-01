@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import DeleteView, ListView
+from django.views.generic import DetailView, ListView
 
 from .models import Choice, Question
 
@@ -14,7 +14,7 @@ class IndexView(ListView):
         return Question.objects.order_by("-pub_date")[:5]
 
 
-class DetailView(DetailView):
+class DetailsView(DetailView):
     model = Question
     template_name = "polls/detail.html"
 
