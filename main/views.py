@@ -20,6 +20,7 @@ class DetailsView(DetailView):
     template_name = "polls/detail.html"
 
 
+
 class ResultsView(DetailView):
     model = Question
     template_name = "polls/results.html"
